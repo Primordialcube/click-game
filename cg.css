@@ -1,0 +1,70 @@
+@import "node_modules/modern-normalize/modern-normalize.css";
+
+:root {
+    line-height: 1.5;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  figure,
+  p,
+  ol,
+  ul {
+    margin: 0;
+  }
+  
+  ol[role="list"],
+  ul[role="list"] {
+    list-style: none;
+    padding-inline: 0;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  
+  img {
+    display: block;
+    max-inline-size: 100%;
+  }
+
+  /*---------------------------------------*/ 
+
+  body {
+    background-color: rgb(10, 10, 10);
+    display: grid;
+    justify-content: center;
+    transform: translateY(35px);
+  }
+
+  .grid-container {
+    counter-set: grid-counter;
+    display: grid;
+    grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+    grid-template-rows: 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+    gap: 5px;
+    border: 10px solid rgb(32, 32, 32);
+    background-color: rgb(0, 0, 0);
+    padding: 5px;
+  }
+
+  .grid-item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(59, 59, 59);
+    color: orange;
+  }
+
+  .grid-item::after {
+    counter-increment: grid-counter;
+    content: counter(grid-counter);
+  }
